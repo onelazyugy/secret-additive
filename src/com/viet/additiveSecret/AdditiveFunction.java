@@ -4,20 +4,26 @@ import java.util.List;
 
 /**
  * Calculate if the a give prime number is additive [secret(x + y) = secret(x) + secret(y)]
- * Created by viet on 11/30/16.
+ * Created by Viet on 11/30/16.
  */
-public class Additive implements AdditiveIfc{
+public class AdditiveFunction implements Function {
     private List<Integer> primeList;
-    public Additive(List<Integer> primeList){
+
+    public AdditiveFunction(List<Integer> primeList){
         this.primeList = primeList;
     }
 
+    /**
+     * A helper method to help determine if the given parameter is additive
+     * @param i
+     * @return the parameter time 2
+     */
     private int secret(int i) {
         return i * 2;
     }
 
     /**
-     * check whether an input to the secret function is additive or not
+     * Check whether an input to the secret function is additive or not based on [secret(x + y) = secret(x) + secret(y)]
      * @return true if it is additive else false
      */
     @Override

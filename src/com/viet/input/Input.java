@@ -1,20 +1,33 @@
 package com.viet.input;
 
-import com.viet.util.NumberUtils;
+import com.viet.exception.GeneralException;
+import com.viet.validation.AdditiveValidation;
 
 import java.util.Scanner;
 
 /**
- * Created by viet on 11/30/16.
+ * Get the user input from command line
+ * Created by Viet on 11/30/16.
  */
 public class Input {
-    public int getInput(){
+
+    /**
+     * Get the user input from command line and validate it
+     * @return
+     * @throws GeneralException
+     */
+    public int getInput() throws GeneralException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
-        int input = scanner.nextInt();
-        //check for number or not
-
-        scanner.close();
+        boolean hasNextInt = scanner.hasNextInt();
+        int input;
+        if(hasNextInt){
+            input = scanner.nextInt();
+            AdditiveValidation.validateInput(input);
+            scanner.close();
+        } else {
+            throw new GeneralException("Input must be positive integer. Please try again!");
+        }
         return input;
     }
 }

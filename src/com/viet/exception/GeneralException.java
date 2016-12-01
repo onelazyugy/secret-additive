@@ -1,11 +1,12 @@
 package com.viet.exception;
 
 /**
- * Created by viet on 11/30/16.
+ * A general exception
+ * Created by Viet on 11/30/16.
  */
-public class AdditiveException extends Exception{
+public class GeneralException extends Exception{
     private String message;
-    public AdditiveException(String message){
+    public GeneralException(String message){
         this.message = message;
     }
 
@@ -20,7 +21,7 @@ public class AdditiveException extends Exception{
 
     @Override
     public String toString() {
-        return "AdditiveException{" +
+        return "GeneralException{" +
                 "message='" + message + '\'' +
                 '}';
     }

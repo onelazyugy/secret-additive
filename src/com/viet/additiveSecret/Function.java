@@ -2,8 +2,8 @@ package com.viet.additiveSecret;
 
 
 /**
- * Created by viet on 11/30/16.
+ * Created by Viet on 11/30/16.
  */
-public interface AdditiveIfc {
+public interface Function {
     boolean isAdditive();
 }
